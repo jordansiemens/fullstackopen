@@ -22,12 +22,16 @@ const AllStats = ({good, bad, neutral}) => {
   return (
     <div>
       <Header headertitle="statistics" />
-      <Statistics title="good" amount={good}/>
-      <Statistics title="neutral" amount={neutral}/>
-      <Statistics title="bad" amount={bad}/>
-      <Statistics title="all" amount={total}/>
-      <Statistics title="average" amount={(good - bad) / total}/>
-      <Statistics title="positive" amount={good / total} />
+      <table>
+        <tbody>
+          <tr><Statistics title="good" amount={good}/></tr>
+          <tr><Statistics title="neutral" amount={neutral}/></tr>
+          <tr><Statistics title="bad" amount={bad}/></tr>
+          <tr><Statistics title="all" amount={total}/></tr>
+          <tr><Statistics title="average" amount={((good - bad) / total).toFixed(2)}/></tr>
+          <tr><Statistics title="positive" amount={(good / total).toFixed(2)}/></tr>
+      </tbody>
+    </table>
     </div>
   )
   
